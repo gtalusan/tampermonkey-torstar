@@ -5,7 +5,7 @@
 // @version      0.1
 // @description  remove the meter div
 // @author       You
-// @match        https://www.thestar.com/*/*.html
+// @match        https://www.thestar.com/*/*.html*
 // @grant        none
 // ==/UserScript==
 
