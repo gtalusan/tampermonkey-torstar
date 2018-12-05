@@ -8,6 +8,7 @@
 // @match        https://www.thestar.com
 // @match        https://www.thestar.com/*/*.html*
 // @grant        none
+// @run-at       document-idle
 // ==/UserScript==
 
 (function() {
