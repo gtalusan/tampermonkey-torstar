@@ -2,7 +2,7 @@
 // @name         The Toronto Star Meter Wall Remover
 // @supportURL   http://github.com/gtalusan/tampermonkey-torstar
 // @namespace    http://github.com/gtalusan/
-// @version      0.4
+// @version      0.5
 // @description  remove the meter div
 // @author       You
 // @match        https://www.thestar.com
@@ -29,6 +29,11 @@
         $('p').filter(function() {
             return $(this).css('display') == 'none' && !$(this).hasClass('print-header') && !$(this).hasClass('print-footer');
         }).css('display', 'block');
+    }, 1000);
+    setTimeout(function() {
+        $('div').filter(function() {
+            return $(this).hasClass('basic-paywall-new');
+        }).remove();
     }, 1000);
     setTimeout(function() {
         var banner = document.getElementsByClassName('meter-banner')[0];
