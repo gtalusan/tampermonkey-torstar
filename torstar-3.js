@@ -2,7 +2,7 @@
 // @name         The Toronto Star Subscriber Wall Remover
 // @supportURL   http://github.com/gtalusan/tampermonkey-torstar
 // @namespace    http://github.com/gtalusan/
-// @version      0.8
+// @version      0.9
 // @description  remove the meter div and re-block/unhide subscriber-only elements
 // @author       You
 // @match        https://www.thestar.com
@@ -25,7 +25,17 @@ setInterval(function() {
     $(".subscriber-preview").each(function() {
         $(this).removeClass("last-preview");
     });
+    $(".access-offers-modal").each(function() {
+        $(this).remove();
+    });
     $(".tsArticle").each(function() {
         $(this).removeAttr("hidden");
     });
+    $(".modal").each(function() {
+        $(this).remove();
+    });
+    $(".modal-backdrop").each(function() {
+        $(this).remove();
+    });
+    $("html,body").css("overflow","auto").removeClass("modal-open");
 }, 1500);
